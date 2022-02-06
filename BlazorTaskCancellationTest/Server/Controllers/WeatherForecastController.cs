@@ -29,10 +29,7 @@ namespace BlazorTaskCancellationTest.Server.Controllers
                 // Artifical delay
                 await Task.Delay(500);
 
-                if (token.IsCancellationRequested)
-                {
-                    token.ThrowIfCancellationRequested();
-                }
+                token.ThrowIfCancellationRequested();
 
                 var instance = new WeatherForecast
                 {
